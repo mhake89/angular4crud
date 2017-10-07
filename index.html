@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="crudApp">
+	<head>
+		<title>Crud Apllication</title>
+		<script type="text/javascript" src="lib/angular.min.js"></script>
+		<script type="text/javascript" src="config/config.js"></script>
+		<script type="text/javascript" src="addNew/addNewController.js"></script>
+		<script type="text/javascript" src="inheritance/parentCtrl.js"></script>
+		<script type="text/javascript" src="inheritance/childACtrl.js"></script>
+		<script type="text/javascript" src="Home/homeCtrl.js"></script>
+		<script type="text/javascript" src="services/myService.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.js"></script>
+		<!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
+		 <link rel="stylesheet" href="assets/js/jquery-ui.css" />
+    
+    <!-- Load jQuery JS -->
+   <!-- <script src="assets/js/jquery-1.9.1.js"></script> -->
+    <!-- Load jQuery UI Main JS  -->
+    <script src="assets/js/jquery-ui.js"></script>
+    
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	</head>
+
+	<body>
+		<div class = "container">
+			<div ng-view></div>
+		</div>
+
+		<script>
+			/*  jQuery ready function. Specify a function to execute when the DOM is fully loaded.  */
+			$(document).ready(
+			   //<!-- Load SCRIPT.JS which will create datepicker for input field  -->
+			  /* This is the function that will get executed after the DOM is fully loaded */
+
+ 			
+			
+
+			  function () {
+				$( "#datepicker" ).datepicker({
+				  changeMonth: true,//this option for allowing user to select month
+				  changeYear: true //this option for allowing user to select from year range
+				});
+			  }
+
+
+
+			);
+
+			$("#ui-datepicker-div").bind("click",function(){
+
+			  	alert("Ok");
+			  });
+		</script>
+	</body>
+</html>
