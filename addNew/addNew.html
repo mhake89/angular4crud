@@ -1,0 +1,70 @@
+<div class="container">
+
+		<div class="row">
+			<div class="text-center">
+					<h2>Add New Record</h2>
+					<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="text-center">
+				<h3 style="padding-bottom: 5px;"><a href="#home">Click to View Students Record</a></h3>
+			</div>
+		</div>
+
+	<div class="main-addStud main-center">
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="name" class=" col-sm-3 control-label">Name</label>
+				<div class="col-sm-12">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+						<input type="text" name="txtName" class="form-control" placeholder="Your Name" ng-model="student.name">
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="email" class=" col-sm-3 control-label">Email</label>
+				<div class="col-sm-12">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
+						<input type="text" name="txtEmail" class="form-control" placeholder="Your Email" ng-model="student.email" ng-required="true">
+					</div>
+				<div class="form-control">
+					<span>Enter Email Address</span>
+				</div>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<label for="date" class=" col-sm-3 control-label">Date</label>
+				<div class="col-sm-12">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+						<!--<input type="text" id="datepicker" /> -->
+						<input type="text" id="datepicker" name="Bdate" class="form-control" placeholder="Date must be (MM/dd/yyyy)" ng-model="student.dumyDt">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-3">Gender</label>
+				<div class="col-sm-12">
+					<label class="radio-inline">
+						<input type="radio" class="radio" name="gender" ng-model="student.gender" value="Male">Male
+					</label>
+					<label class="radio-inline">
+						<input type="radio" class="radio" name="gender" ng-model="student.gender" value="Female">Female
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group ">
+				<button type="button" class="btn btn-primary btn-lg btn-block login-button" ng-click="addNew()">Submit</button>
+			</div>
+		</form>
+	</div>	
+</div>

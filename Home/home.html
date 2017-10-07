@@ -1,0 +1,63 @@
+<div class="main-addStud home-center">
+<form>
+	<h1 class="text-center" style="padding-bottom: 20px; color: blue;">Student Record System</h1>
+	
+	<div class="form-group col-xs-12 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-1 col-lg-12 col-lg-offset-1">
+		<label class="control-label col-xs-12 col-sm-1 col-md-1 col-lg-1text-right" style="font-size: 19px;">FilterBy </label>
+		<div class="col-sm-2">
+			<select  class="form-control font20" ng-model="colOrder" ng-change="setcol()">
+				<option value="">--Select--</option>
+				<option value="-name">Name</option>
+				<option value="email">Email</option>
+				<option value="-dob">Dob</option>
+				<option value="gender">Gender</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="row" ng-show="colOrder">
+		<div class="col-xs-12 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-1 col-lg-12 col-lg-offset-1">
+			<label class=" font20 control-label col-sm-11">Search Record By {{search}}</label>
+		</div>
+	</div>
+
+		<div class=" form-group col-xs-12 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-1 col-lg-12 col-lg-offset-1" ng-show="colOrder">
+			<div class="input-group col-sm-3">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></span>
+				<input type="text" id="srch" class="form-control" placeholder="Search" ng-model= "colname" />
+			</div>
+		</div>
+
+	<div class="row">
+		<div class="form-group">
+			<div class="form-group col-sm-7 col-sm-offset-1">
+				<label class="control-label col-sm-12 font20">Sort Record By Order {{defaultOrder}}</label>
+			</div>
+
+			<div class="form-group text-left col-sm-4">
+				<a href="#addNew" style="font-size: 18px;">Add New Student Record</a>
+			</div>
+		</div>
+	</div>
+
+	<table class="table-bordered" style="width: 80%;margin:0 auto;">
+		<tr style="color: darkblue;">
+			<th> <a href="javascript:void(0)" ng-click="setSort('name')" style="color: darkblue;">NAME</a> </th>
+			<th> <a href="javascript:void(0)" ng-click="setSort('email')" style="color: darkblue;">EMAIL</a> </th>
+			<th> <a href="javascript:void(0)" ng-click="setSort('dob')" style="color: darkblue;">DOB</a> </th>
+			<th>GENDER</th>
+			<th>EDIT</th>
+			<th>DELETE</th>
+		</tr>
+		<tr ng-repeat="stud in students | orderBy : defaultOrder | orderBy : colOrder | colsearch : colname">
+			<td ng-bind="stud.name"></td>
+			<td ng-bind= "stud.email"></td>
+			<td ng-bind = "stud.dob | dateFormat : 'dd/MM/yyyy'"></td>
+			<td ng-bind= "stud.gender"></td>
+			<td><a href="#addNew" class="btn btn-success btn-sm" ng-click="editRec($index)"><span class="glyphicon glyphicon-pencil"></span> Edit </a></td>
+			<td><a href="" class="btn btn-success btn-sm" ng-click="delRec($index)"><span class="glyphicon glyphicon-remove"></span> Delete </a></td>
+		</tr>
+	</table>
+
+</form>
+</div>
